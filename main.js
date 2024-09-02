@@ -26,7 +26,7 @@
 
 //      }
 //     reject(err) {
-//         this.errorHandler(err) 
+//         this.errorHandler(err)
 //         this.finallyHandler()
 //      }
 //     then(fn) {
@@ -72,17 +72,17 @@
 //         console.log('finally')
 //     })
 
-const promise1 = new Promise(() => {
+// const promise1 = new Promise(() => {
 
-})
-console.log(promise1)
+// })
+// console.log(promise1)
 
 
-const promise = fetch('https://jsonplaceholder.typicode.com/photos/1')
-// console.log(promise)
+// const promise = fetch('https://jsonplaceholder.typicode.com/photos/1')
+// // console.log(promise)
 
-const img = document.querySelector('.img')
-const title = document.querySelector('.title')
+// const img = document.querySelector('.img')
+// const title = document.querySelector('.title')
 
 // promise.then(data => {
 //     const result = data.json
@@ -90,7 +90,7 @@ const title = document.querySelector('.title')
 
 
 // })
-//     .then(response => 
+//     .then(response =>
 //         console.log(response);
 //         img.src = response.thumbnailUrl
 //         title.innerHTML = response.title
@@ -135,54 +135,111 @@ const title = document.querySelector('.title')
 // result -> start end promise 1 promise 2 setTimeout 1 setTimeout 2
 
 
-// синхронный код 
+// синхронный код
 // микротаски
 // макротаски
 // result -> start end 'promise 1' 'promise 2' 'promise 1' 'promise 2' 'setTimeout 2' 'setTimeout 1'
 
-console.log('start')
+// console.log('start')
 
-function foo() {
-    setTimeout(() => {
-        console.log('setTimeout 1')
-    }, 0)
-}
+// function foo() {
+//     setTimeout(() => {
+//         console.log('setTimeout 1')
+//     }, 0)
+// }
 
-const promise = new Promise((resolve) => {
-    console.log('executor start');
+// const promise = new Promise((resolve) => {
+//     console.log('executor start');
 
-    setTimeout(() => {
-        console.log('setTimeout into pormise');
-        resolve('resolve')
+//     setTimeout(() => {
+//         console.log('setTimeout into pormise');
+//         resolve('resolve')
 
-    })
-    console.log('executor finish');
+//     })
+//     console.log('executor finish');
 
-})
-Promise.resolve('resolve2')
-    .then(() => {
-        console.log('promise 2');
-    })
-    .then(() => {
-        console.log('promise 2');
-    })
+// })
+// Promise.resolve('resolve2')
+//     .then(() => {
+//         console.log('promise 2');
+//     })
+//     .then(() => {
+//         console.log('promise 2');
+//     })
 
-promise.then(() => {
-        console.log('promise 1');
-    })
-    .then(() => {
-        console.log('promise 1');
-    })
+// promise.then(() => {
+//         console.log('promise 1');
+//     })
+//     .then(() => {
+//         console.log('promise 1');
+//     })
 
-setTimeout(() => {
-    console.log(' setTimeout 2')
-}, 0)
+// setTimeout(() => {
+//     console.log(' setTimeout 2')
+// }, 0)
 
-foo()
-console.log('end')
+// foo()
+// console.log('end')
 
-// синхронный код 
+// синхронный код
 // микротаски
 // макротаски
-// result -> 'start' 'executor start' 'executor finish' end  'promise 2' 'promise 2' 
+// result -> 'start' 'executor start' 'executor finish' end  'promise 2' 'promise 2'
 //  'setTimeout into pormise''promise 2' 'promise 1' ' setTimeout 2'  'setTimeout 1'
+
+
+/*
+fetch('https://jsonplaceholder.typicode.com/users/1')
+.then(result => {
+    console.log(result)
+    if(!result.ok) throw new Error("Запрос не успешен")
+    const body = result.json()
+    console.log(body)
+    return body
+})
+.then(body => {
+    console.log(body)
+})
+.catch((e) => {
+    console.log(e)
+})
+.finally(() => {
+    console.log('Запрос завершен')
+})
+
+
+
+
+*/
+
+// const url = ''
+
+// async function getUser(userId) {
+//     try {
+//         const response = await fetch(`${baseUrl}/${userId}`)
+//         if (!result.ok) {
+//             throw new Error("Запрос не успешен")
+//         }
+//         const user = await response.json()
+//         console.log(user);
+
+//     } catch (e) {
+//         console.log(e);
+//     } finally {
+//         console.log('Запрос завершен');
+
+//     }
+
+
+// }
+// const result = getUser(10)
+
+// console.log(result);
+
+
+const btn = document.querySelector('.btn')
+btn.addEventListener('cllick', getTodos)
+
+function getTodos() {
+
+}
